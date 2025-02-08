@@ -98,8 +98,8 @@ odin-project-creator <название-проекта> ["ols"/any] ["vscode"/any
 ### Параметры
 
 1. `<название-проекта>` - обязательный;
-2. `["ols"/any]` - создаёт 'ols.json' (опционально);
-3. `["vscode"/any]` - создаёт папку '.vscode' с файлами 'launch.json' и 'tasks.json' (опционально).
+2. `["ols"/any]` - создаёт `ols.json` (опционально);
+3. `["vscode"/any]` - создаёт папку `.vscode` с файлами `launch.json` и `tasks.json` (опционально).
 
 ### Примеры
 
