@@ -8,7 +8,7 @@
             "name": "Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/odin-project-creator",
+            "program": "${workspaceFolder}/${workspaceFolderBasename}",
             "args": ["-h", "-", "-"],
             "cwd": "${workspaceFolder}",
         }
