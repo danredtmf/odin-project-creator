@@ -1,20 +1,6 @@
 package create
 
-PROGRAM_VERSION :: "0.0.1"
-PROGRAM_HELP_TEXT ::
-`ODIN Project Creator. Version %v
-Using:
-    program <project-name> ["ols"/any] ["vscode"/any]
-    
-    1. <project-name> is required;
-    2. ["ols"/any] - creates 'ols.json' (optional);
-    3. ["vscode"/any] - creates '.vscode' folder with 'launch.json' and 'tasks.json' files (optional).
-For example:
-    program hello ols vscode
-or
-    program hello ols
-or
-    program hello - vscode`
+PROGRAM_VERSION :: "0.0.2"
 
 OLS_FILE_NAME :: "ols.json"
 OLS_INSTANCE :: OLS {

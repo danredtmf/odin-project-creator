@@ -15,7 +15,7 @@ folder :: proc(path_slice: ^[]string) {
 
         if err_create_project_folder != nil {
             fmt.eprintfln("Folder creation error: %v", err_create_project_folder)
-            os.exit(1)
+            os.exit(0)
         }
 
         fmt.printfln("Folder `%s` has been created!", folder_name)
@@ -36,7 +36,7 @@ main_file :: proc(path_slice: ^[dynamic]string) {
 
     if err_main_handle != nil {
         fmt.eprintfln("Error writing `main.odin` text to file: %v", err_main_handle)
-        os.exit(1)
+        os.exit(0)
     } else {
         main_to_runes := utf8.string_to_runes(MAIN_ODIN_DATA)
 
@@ -45,7 +45,7 @@ main_file :: proc(path_slice: ^[dynamic]string) {
 
             if err_main_write != nil {
                 fmt.eprintfln("Error writing `main.odin` text to file: %v", err_main_write)
-                os.exit(1)
+                os.exit(0)
             }
         }
         os.close(main_handle)
@@ -87,14 +87,14 @@ ols :: proc(path_slice: ^[dynamic]string) {
 
             if err_ols_write != nil {
                 fmt.eprintfln("Error writing `OLS` configuration to file: %v", err_ols_write)
-                os.exit(1)
+                os.exit(0)
             }
 
             fmt.println("`OLS` configuration has been created!")
         }
     } else {
         fmt.eprintfln("Parse error: %v", err_p)
-        os.exit(1)
+        os.exit(0)
     }
 }
 
@@ -118,7 +118,7 @@ vscode_config :: proc(path_slice: ^[dynamic]string, program_name: ^string) {
 
     if err_launch_write != nil {
         fmt.eprintfln("Error writing `vscode/launch` configuration to file: %v", err_launch_write)
-        os.exit(1)
+        os.exit(0)
     }
 
     json_data_tasks, _ := json.marshal(VSCODE_TASKS_INSTANCE, {
@@ -130,7 +130,7 @@ vscode_config :: proc(path_slice: ^[dynamic]string, program_name: ^string) {
 
     if err_tasks_write != nil {
         fmt.eprintfln("Error writing `vscode/tasks` configuration to file: %v", err_tasks_write)
-        os.exit(1)
+        os.exit(0)
     }
 
     fmt.println("`VSCode` configuration has been created!")
