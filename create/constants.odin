@@ -22,6 +22,7 @@ main :: proc() {
 
 VSCODE_FOLDER_NAME :: ".vscode"
 VSCODE_LAUNCH_PROGRAM_CONFIG :: "${workspaceFolder}/"
+VSCODE_LAUNCH_PROGRAM_CONFIG_DEFAULT :: "${workspaceFolder}/${workspaceFolderBasename}"
 VSCODE_LAUNCH_INSTANCE :: VSCODE_LAUNCH {
     version = "0.2.0",
     configurations = {
