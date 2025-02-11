@@ -48,6 +48,7 @@ main_file :: proc(path_slice: ^[dynamic]string) {
                 os.exit(0)
             }
         }
+        os.flush(main_handle)
         os.close(main_handle)
         fmt.println("`main.odin` has been created!")
     }
