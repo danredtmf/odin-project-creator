@@ -98,18 +98,15 @@ ols :: proc(path_slice: ^[dynamic]string) {
     }
 }
 
-vscode_config :: proc(path_slice: ^[dynamic]string, program_name: ^string) {
+vscode_config :: proc(path_slice: ^[dynamic]string) {
     vscode_path_slice := slice.clone(path_slice[:])
     vscode_path := strings.concatenate(path_slice[:])
     vscode_launch_path := strings.concatenate({vscode_path, "/", "launch.json"})
     vscode_tasks_path := strings.concatenate({vscode_path, "/", "tasks.json"})
 
-    vscode_launch := VSCODE_LAUNCH_INSTANCE
-    vscode_launch.configurations[0].program = strings.concatenate({VSCODE_LAUNCH_PROGRAM_CONFIG, program_name^})
-
     folder(&vscode_path_slice)
 
-    json_data_launch, _ := json.marshal(vscode_launch, {
+    json_data_launch, _ := json.marshal(VSCODE_LAUNCH_INSTANCE, {
         pretty = true, use_spaces = true
     })
     defer delete(json_data_launch)

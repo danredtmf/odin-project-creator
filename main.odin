@@ -63,7 +63,7 @@ main :: proc() {
     }
 
     if opt.vscode {
-        create.vscode_config(&vscode_config_local_slice, &project_name)
+        create.vscode_config(&vscode_config_local_slice)
     }
 
     fmt.println("The project has been created!")
