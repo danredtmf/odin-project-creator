@@ -21,6 +21,8 @@ main :: proc() {
 }`
 
 VSCODE_FOLDER_NAME :: ".vscode"
+VSCODE_LAUNCH_FILE_NAME :: "launch.json"
+VSCODE_TASKS_FILE_NAME :: "tasks.json"
 VSCODE_LAUNCH_INSTANCE :: VSCODE_LAUNCH {
     version = "0.2.0",
     configurations = {

@@ -102,8 +102,8 @@ ols :: proc(path_slice: ^[dynamic]string) {
 vscode_config :: proc(path_slice: ^[dynamic]string) {
     vscode_path_slice := slice.clone(path_slice[:])
     vscode_path := strings.concatenate(path_slice[:])
-    vscode_launch_path := strings.concatenate({vscode_path, "/", "launch.json"})
-    vscode_tasks_path := strings.concatenate({vscode_path, "/", "tasks.json"})
+    vscode_launch_path := strings.concatenate({vscode_path, "/", VSCODE_LAUNCH_FILE_NAME})
+    vscode_tasks_path := strings.concatenate({vscode_path, "/", VSCODE_TASKS_FILE_NAME})
 
     folder(&vscode_path_slice)
 
