@@ -36,26 +36,26 @@ export PATH=${HOME}/Programs/odin-project-creator:$PATH
 ### Usage
 
 ```bash
-odin-project-creator <project-name> ["ols"/any] ["vscode"/any]
+odin-project-creator <project-name> --ols --vscode
 ```
 
 ### Options
 
 1. `<project-name>` is required;
-2. `[“ols”/any]` - creates `ols.json` (optional);
-3. `[“vscode”/any]` - creates `.vscode` folder with `launch.json` and `tasks.json` files (optional).
+2. `--ols` - creates `ols.json` (optional);
+3. `--vscode` - creates `.vscode` folder with `launch.json` and `tasks.json` files (optional).
 
 ### Examples
 
 ```bash
 # Create a `hello` project with `ols.json` and files for VSCode
-odin-project-creator hello ols vscode
+odin-project-creator hello --ols --vscode
 
 # Create a `hello` project with `ols.json` but without files for VSCode
-odin-project-creator hello ols
+odin-project-creator hello --ols
 
 # Create a `hello` project without `ols.json` but with files for VSCode
-odin-project-creator hello - vscode
+odin-project-creator hello --vscode
 ```
 
 ## RUS
@@ -92,24 +92,24 @@ export PATH=${HOME}/Programs/odin-project-creator:$PATH
 ### Использование
 
 ```bash
-odin-project-creator <название-проекта> ["ols"/any] ["vscode"/any]
+odin-project-creator <название-проекта> --ols --vscode
 ```
 
 ### Параметры
 
 1. `<название-проекта>` - обязательный;
-2. `["ols"/any]` - создаёт `ols.json` (опционально);
-3. `["vscode"/any]` - создаёт папку `.vscode` с файлами `launch.json` и `tasks.json` (опционально).
+2. `--ols` - создаёт `ols.json` (опционально);
+3. `--vscode` - создаёт папку `.vscode` с файлами `launch.json` и `tasks.json` (опционально).
 
 ### Примеры
 
 ```bash
 # Создание проекта `hello` с `ols.json` и с файлами для VSCode
-odin-project-creator hello ols vscode
+odin-project-creator hello --ols --vscode
 
 # Создание проекта `hello` с `ols.json`, но без файлов для VSCode
-odin-project-creator hello ols
+odin-project-creator hello --ols
 
 # Создание проекта `hello` без `ols.json`, но с файлами для VSCode
-odin-project-creator hello - vscode
+odin-project-creator hello --vscode
 ```
