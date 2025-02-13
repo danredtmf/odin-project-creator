@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/${workspaceFolderBasename}",
-            "args": ["-h", "-", "-"],
+            "args": ["--help"],
             "cwd": "${workspaceFolder}",
         }
     ]
