@@ -64,35 +64,19 @@ ols :: proc(path_slice: ^[dynamic]string) {
 
     if err_p == .None {
         my_map := json_data_init_edit.(json.Object)
-
-        new_key := "$schema"
-        old_key := "schema"
         
-        if value, ok := my_map[old_key]; ok {
-            new_map := json.Object{}
-            defer delete(new_map)
+        json_data_final, err_m_f := json.marshal(my_map, {
+            pretty = true, use_spaces = true
+        })
 
-            for k, v in my_map {
-                if k != old_key {
-                    new_map[k] = v
-                }
-            }
-            new_map[new_key] = value
-            my_map = new_map
+        err_ols_write := os.write_entire_file_or_err(ols_path, json_data_final)
 
-            json_data_final, err_m_f := json.marshal(my_map, {
-                pretty = true, use_spaces = true
-            })
-
-            err_ols_write := os.write_entire_file_or_err(ols_path, json_data_final)
-
-            if err_ols_write != nil {
-                fmt.eprintfln("Error writing `OLS` configuration to file: %v", err_ols_write)
-                os.exit(0)
-            }
-
-            fmt.println("`OLS` configuration has been created!")
+        if err_ols_write != nil {
+            fmt.eprintfln("Error writing `OLS` configuration to file: %v", err_ols_write)
+            os.exit(0)
         }
+
+        fmt.println("`OLS` configuration has been created!")
     } else {
         fmt.eprintfln("Parse error: %v", err_p)
         os.exit(0)

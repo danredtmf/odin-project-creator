@@ -1,7 +1,7 @@
 package create
 
 OLS :: struct {
-    schema: string,
+    schema: string `json:"$schema"`,
     enable_document_symbols: bool,
     enable_hover: bool,
     enable_snippets: bool,
