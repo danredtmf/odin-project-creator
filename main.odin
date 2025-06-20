@@ -9,7 +9,7 @@ import "core:strings"
 import "create"
 
 OPTIONS :: struct {
-    name: string  `usage:"Project name. (required)"`,
+    name: string  `usage:"Project name (required)."`,
     ols: bool     `usage:"Creates 'ols.json' (optional)."`,
     vscode: bool  `usage:"Creates '.vscode' folder with 'launch.json' and 'tasks.json' files (optional)."`,
     version: bool `usage:"Show program version."`,

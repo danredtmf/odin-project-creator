@@ -1,6 +1,6 @@
 package create
 
-PROGRAM_VERSION :: "0.0.2"
+PROGRAM_VERSION :: "0.0.3"
 
 OLS_FILE_NAME :: "ols.json"
 OLS_INSTANCE :: OLS {
